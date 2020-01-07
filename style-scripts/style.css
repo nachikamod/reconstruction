@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.selector{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+.title{
+  color: white;
+  letter-spacing: 10px;
+  font-family: 'Audiowide', cursive;
+  font-size: 5vw;
+}
+.sub-title{
+  color: white;
+  font-size: 1.5vw;
+}
+
+.login-btn{
+  background-color: Transparent;
+  width: 15vw;
+  color: white;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  border: 0.1vw solid white;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  font-size: 1vw;
+}
+
+.login-btn:hover{
+  background-color: black;
+  border: none;
+}
+
+.admin{
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  box-shadow: 5px 5px 10px black;
+  border-radius: 0.4vw;
+  opacity: 0.8;
+}
+
+/*Custom Input*/
+
+.inp {
+  position: relative;
+  margin: auto;
+  width: 100%;
+}
+.inp .label {
+  position: absolute;
+  top:1vw;
+  left: 0;
+  font-size: 1vw;
+  color: white;
+  font-weight: 500;
+  transform-origin: 0 0;
+  transition: all 0.2s ease;
+}
+.inp .border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.1vw;
+  width: 100%;
+  background: #07f;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: all 0.15s ease;
+}
+.inp input {
+  -webkit-appearance: none;
+  width: 100%;
+  border: 0;
+  font-family: inherit;
+  padding: 1vw 0;
+  height: 3vw;
+  font-size: 1vw;
+  font-weight: 500;
+  border-bottom: 0.1vw solid #c8ccd4;
+  background: none;
+  border-radius: 0;
+  color: white;
+  transition: all 0.15s ease;
+}
+.inp input:hover {
+  background: rgba(34,50,84,0.03);
+}
+.inp input:not(:placeholder-shown) + span {
+  color: white;
+  transform: translateY(-2vw) scale(0.75);
+}
+.inp input:focus {
+  background: none;
+  outline: none;
+}
+.inp input:focus + span {
+  color: white;
+  transform: translateY(-2vw) scale(0.75);
+}
+.inp input:focus + span + .border {
+  transform: scaleX(1);
+}
+
+/*login success*/
+.login-suc{
+  float: right;
+}

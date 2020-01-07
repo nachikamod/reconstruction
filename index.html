@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ALACRITY CONSOLE</title>
+
+    <!--CDN libraries-->
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/62a31fdea1.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+    <script src="https://firebasestorage.googleapis.com/v0/b/alacrity-f3971.appspot.com/o/hosting_alacrity%2Fapi_key%2Falacrity-auth.js?alt=media&token=2b2e4e95-e95f-4861-8584-d9d81a38f3dc"></script>
+ 
+    <!--local libraries-->
+
+    <script type="text/javascript" src="bg-src/sketch.js"></script>
+    <script type="text/javascript" src="bg-src/drop.js"></script>
+    <script src="js-lib/index.js"></script>
+    <link rel="stylesheet" href="style-scripts/style.css">
+
+</head>
+<body onload="testJS()">
+
+    <!--login selection-->
+
+    <div class="selector">
+        <p class="title">ALACRITY</p>
+        <p class="sub-title">AMBASSADOR CONSOLE</p>
+        <div style="margin-top:2vw">
+          <button type="button" class="login-btn" onclick="document.getElementById('admin-login').style.display='block'">ADMIN LOGIN</button>
+          <button type="button" class="login-btn" onclick="document.getElementById('ambassador-login').style.display='block'">AMBASSADOR LOGIN</button>
+        </div>
+    </div>
+
+    <!--Admin Login pop up-->
+
+    <div class="container admin" id="admin-login">
+
+        <h1 style="text-align:center;margin-top:2vw;color:white">ADMINISTRATION</h1>
+
+        <!--Email-->
+  
+        <div class="form-group" style="margin:2vw">
+          <label for="inp" class="inp">
+            <input type="email" id="emailId" placeholder="&nbsp;">
+            <span class="label">Admin Email</span>
+            <span class="border"></span>
+          </label>
+        </div>
+
+        <!--Password-->
+
+        <div class="form-group" style="margin:2vw">
+          <label for="inp" class="inp">
+            <input type="password" id="passId" placeholder="&nbsp;">
+            <span class="label">Password</span>
+            <span class="border"></span>
+          </label>
+        </div>
+
+        <!--Selection buttons cancel/login-->
+  
+        <div class="row" style="margin:1vw">
+          <div class="col-sm-6">
+            <button type="cancel" id="cancel" class="btn btn-outline-light text-white" style="border:none" onclick="document.getElementById('admin-login').style.display='none'">Cancel</button>
+          </div>
+          <div class="col-sm-6">
+          <button type="submit" id="fire-login" onclick="admin_login()" class="login-suc login-btn" class="btn btn-primary"><i class="fa fa-sign-in" style="color:white;padding-right:0.5vw" aria-hidden="true"></i>Log in</button>
+          </div>
+        </div>
+    </div>
+
+    <!--Ambassdor Login pop up-->
+
+    <div class="container admin" id="ambassador-login">
+
+        <h1 style="text-align:center;margin-top:2vw;color:white">AMBASSADOR</h1>
+
+        <!--Email-->
+  
+        <div class="form-group" style="margin:2vw">
+          <label for="inp" class="inp">
+            <input type="email" id="amb_emailId" placeholder="&nbsp;">
+            <span class="label">Ambassador Email</span>
+            <span class="border"></span>
+          </label>
+        </div>
+
+        <!--Password-->
+
+        <div class="form-group" style="margin:2vw">
+          <label for="inp" class="inp">
+            <input type="password" id="amb_passId" placeholder="&nbsp;">
+            <span class="label">Password</span>
+            <span class="border"></span>
+          </label>
+        </div>
+
+        <!--Selection buttons cancel/login-->
+  
+        <div class="row" style="margin:1vw">
+          <div class="col-sm-6">
+            <button type="cancel" id="cancel" class="btn btn-outline-light text-white" style="border:none" onclick="document.getElementById('ambassador-login').style.display='none'">Cancel</button>
+          </div>
+          <div class="col-sm-6">
+          <button type="submit" id="fire-login" onclick="ambassador_login()" class="login-suc login-btn" class="btn btn-primary"><i class="fa fa-sign-in" style="color:white;padding-right:0.5vw" aria-hidden="true"></i>Log in</button>
+          </div>
+        </div>
+    </div>
+    
+</body>
+</html>
